@@ -19,11 +19,15 @@ fun main() {
             repeat(10) {
                 channel.send(it)
                 println("Sent $it")
+                println("Sent $it #2")
+                println("Sent $it #3")
             }
         }
         repeat(3) {
             delay(1000L)
             println("Received ${channel.receive()}")
+            println("Received ${channel.receive()} #2")
+            println("Received ${channel.receive()} #3")
         }
     sender.cancel()
     }
